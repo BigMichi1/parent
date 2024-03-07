@@ -10,7 +10,7 @@ name: 'Dependency Review'
 on: [pull_request]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   dependency-review:
@@ -25,3 +25,6 @@ jobs:
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@0efb1d1d84fc9633afcdaad14c485cbbc90ef46c # v2.5.1
+      - name: Maven Dependency Tree Dependency Submission
+        uses: advanced-security/maven-dependency-submission-action@v4.0.2
+            
