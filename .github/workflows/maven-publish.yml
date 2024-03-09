@@ -44,7 +44,7 @@ jobs:
 
       - if: github.event.release
         name: Publish to Central repository
-        run: mvn release:prepare release:perform -B --active-profiles release -s $GITHUB_WORKSPACE/settings.xml -DreleaseVersion=${{ github.event.release.tag_name }}
+        run: mvn release:prepare release:perform -B --activate-profiles release -s $GITHUB_WORKSPACE/settings.xml -DreleaseVersion=${{ github.event.release.tag_name }}
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
