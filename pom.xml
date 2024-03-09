@@ -14,8 +14,8 @@
     <url>https://github.com/BigMichi1/parent</url>
 
     <scm>
-        <connection>scm:git:git://github.com/BigMichi1/parent.git</connection>
-        <developerConnection>scm:git:ssh://github.com:BigMichi1/parent.git</developerConnection>
+        <connection>scm:git:git@github.com:BigMichi1/parent.git</connection>
+        <developerConnection>scm:git:git@github.com:BigMichi1/parent.git</developerConnection>
         <url>https://github.com/BigMichi1/parent/tree/main</url>
     </scm>
 
