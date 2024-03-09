@@ -42,6 +42,14 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
+      - name: Configure git user
+        run: |
+          git config user.email "michael@bigmichi1.de"
+          git config user.name "Github Actions Bot"
+
+      - name: Maven clean
+        run: mvn --batch-mode clean release:clean
+
       - if: github.event.release
         name: Publish to Central repository
         run: mvn release:prepare release:perform -B --activate-profiles release -s $GITHUB_WORKSPACE/settings.xml -DreleaseVersion=${{ github.event.release.tag_name }}
