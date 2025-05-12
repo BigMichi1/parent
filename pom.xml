@@ -140,12 +140,11 @@
                         <execution>
                             <id>download-sources</id>
                             <goals>
-                                <goal>sources</goal>
+                                <goal>resolve-sources</goal>
                                 <goal>resolve</goal>
                                 <goal>resolve-plugins</goal>
                             </goals>
                             <configuration>
-                                <classifier>javadoc</classifier>
                                 <silent>true</silent>
                             </configuration>
                         </execution>
@@ -339,14 +338,24 @@
                 <plugin>
                     <groupId>org.openrewrite.maven</groupId>
                     <artifactId>rewrite-maven-plugin</artifactId>
-                    <version>6.5.0</version>
+                    <version>6.8.1</version>
                     <configuration>
+                        <exportDatatables>true</exportDatatables>
                         <activeRecipes>
-                            <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
+                            <recipe>org.openrewrite.java.migrate.UpgradeToJava21</recipe>
                             <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
+                            <recipe>org.openrewrite.java.logging.slf4j.Slf4jBestPractices</recipe>
                             <recipe>org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances</recipe>
                             <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
                             <recipe>org.openrewrite.staticanalysis.JavaApiBestPractices</recipe>
+                            <recipe>org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes</recipe>
+                            <recipe>org.openrewrite.apache.commons.io.UseStandardCharsets</recipe>
+                            <recipe>org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4</recipe>
+                            <recipe>org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64</recipe>
+                            <recipe>org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes</recipe>
+                            <recipe>org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3</recipe>
+                            <recipe>org.openrewrite.apache.commons.lang3.UseStandardCharsets</recipe>
+                            <recipe>org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3</recipe>
                         </activeRecipes>
                         <exclusions>
                             <exclude>.repository/**</exclude>
@@ -366,11 +375,21 @@
                         <dependency>
                             <groupId>org.openrewrite.recipe</groupId>
                             <artifactId>rewrite-spring</artifactId>
-                            <version>6.5.0</version>
+                            <version>6.7.0</version>
                         </dependency>
                         <dependency>
                             <groupId>org.openrewrite.recipe</groupId>
                             <artifactId>rewrite-static-analysis</artifactId>
+                            <version>2.9.0</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.openrewrite.recipe</groupId>
+                            <artifactId>rewrite-logging-frameworks</artifactId>
+                            <version>3.8.0</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.openrewrite.recipe</groupId>
+                            <artifactId>rewrite-apache</artifactId>
                             <version>2.9.0</version>
                         </dependency>
                     </dependencies>
