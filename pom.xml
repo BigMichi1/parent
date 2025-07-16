@@ -4,7 +4,7 @@
 
     <groupId>de.bigmichi1.java</groupId>
     <artifactId>parent</artifactId>
-    <version>4.1.0-SNAPSHOT</version>
+    <version>5.0.0</version>
     <packaging>pom</packaging>
 
     <name>Parent POM to manage all plugin versions</name>
@@ -15,7 +15,7 @@
         <connection>scm:git:git@github.com:BigMichi1/parent.git</connection>
         <developerConnection>scm:git:git@github.com:BigMichi1/parent.git</developerConnection>
         <url>https://github.com/BigMichi1/parent/tree/main</url>
-      <tag>HEAD</tag>
+      <tag>v5.0.0</tag>
   </scm>
 
     <issueManagement>
