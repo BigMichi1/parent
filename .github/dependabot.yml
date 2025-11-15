@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: "daily"
     assignees:
-      - "bigmichi1"
+      - "BigMichi1"
     labels:
       - "dependencies"
       - "automerge"
@@ -15,7 +15,7 @@ updates:
     schedule:
       interval: daily
     assignees:
-      - "bigmichi1"
+      - "BigMichi1"
     labels:
       - "dependencies"
       - "automerge"
