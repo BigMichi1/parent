@@ -30,7 +30,7 @@ jobs:
           ref: main
 
       - name: SSH setup
-        uses: webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555 # v0.10.0
+        uses: step-security/ssh-agent@e0d707bd9ce1ec5725e45bd639f7dc60dbc82b39 # v0.9.2
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
